@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTF - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body class="page-center">
+    <div class="card">
+      <h1>Welcome, {{ username }}</h1>
+      <p class="muted">
+        Your user id: <strong>{{ uid }}</strong>
+      </p>
+
+      <div class="flag-box">
+        <strong>Flag 1:</strong>
+        <div class="flag">{{ flag1 }}</div>
+      </div>
+
+      <p>
+        View your profile:
+        <a href="{{ url_for('profile') }}?id={{ uid }}">My Profile</a>
+      </p>
+
+      <p class="muted">
+        (Try changing the <code>id</code> query parameter to 0 to investigate IDOR.)
+      </p>
+
+      <p>
+        <a class="btn-outline" href="/logout">Logout</a>
+      </p>
+    </div>
+  </body>
+</html>

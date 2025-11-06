@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTF - Profile</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body class="page-center">
+    <div class="card">
+      <h1>Profile: {{ user.display }}</h1>
+      <p>username: <strong>{{ user.username }}</strong></p>
+      <p>id: <strong>{{ user.id }}</strong></p>
+
+      {% if is_admin %}
+      <div class="admin-box">
+        <h2>Admin page</h2>
+        <p>Congratulations — you found the admin page.</p>
+        <p class="flag"><strong>FLAG 3: {{ flag3 }}</strong></p>
+      </div>
+      {% else %}
+      <p>This is a regular user profile.</p>
+      {% endif %}
+
+      <p>
+        <a class="btn-outline" href="{{ url_for('dashboard') }}">Back to dashboard</a>
+      </p>
+    </div>
+  </body>
+</html>

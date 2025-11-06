@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTF - Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body class="page-center">
+    <div class="card">
+      <h1 class="brand">Simple CTF</h1>
+      <h2>Login</h2>
+
+      {% if error %}
+      <div class="alert">{{ error }}</div>
+      {% endif %}
+
+      <form method="post" class="form">
+        <label>Username</label>
+        <input name="username" placeholder="e.g. kmutnbCTF" required />
+
+        <label>Password</label>
+        <input name="password" placeholder="base64(username)" required />
+
+        <small class="hint">Hint: password is base64(username)</small>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <p class="muted">View page source for a hidden flag.</p>
+
+      <!--
+      FLAG 2 (inspect page source):
+      {{ flag2 }}
+      -->
+    </div>
+  </body>
+</html>
